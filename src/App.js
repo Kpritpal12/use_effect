@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// import ClassComp from "./FunctionComp/ClassComp"
+// import UseStateTest from './Lifecycle/UseStateTest'
+import { useState } from 'react'
+import UseEffectTest from './Lifecycle/UseEffectTest'
+const App= () =>{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const[showComp,setShow]=useState(true);
+     return(
+        <div>
+           {/* <ClassComp/> */}
+           {/* <UseStateTest/> */}
+           {/* <UseEffectTest/> */}
+           {showComp ? <UseEffectTest/> : null}
+           <button onClick={()=>setShow(false)}>unmount useffect comp</button>
+        </div> 
+     )
 }
 
-export default App;
+export default App
+
